@@ -1,10 +1,10 @@
 import {
   STOCK_TIME_SERIES_DAILY,
   STOCK_TIME_SERIES_WEEKLY,
-  STOCK_TIME_SERIES_WEEKLY,
+  STOCK_TIME_SERIES_MONTHLY,
   MULTIPLE_STOCKS_SERIES_MONTHLY
 } from "./highcharts-action-types";
-import M from "minimatch";
+
 
 export const getDailyStocksTimeSeries = symbol => dispatch => {
   fetch(

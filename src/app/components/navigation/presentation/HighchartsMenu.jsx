@@ -28,7 +28,16 @@ const HighchartsMenu = () => {
               Home <span className="sr-only">(current)</span>
             </NavLink>
           </li>
+          <li className="nav-item dropdown">
+          <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Highstocks
+          </a>
+            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <NavLink className="nav-link" style={{ color: "black" }} to="/stocks/daily">Daily Stocks</NavLink>
+            </div>
+          </li>
         </ul>
+      
       </div>
     </nav>
   );
