@@ -7,7 +7,7 @@ import {
 
 export const getDailyForexTimeSeries = (fromSymbol, toSymbol) => dispatch => {
   fetch(
-    `https://www.alphavantage.co/query?function=FX_DAILY&from_symbol=${fromSymbol}&to_symbol=${toSymbol}&apikey=U9SLOWU4L29URCKD`
+    `https://www.alphavantage.co/query?function=FX_DAILY&from_symbol=${fromSymbol}&to_symbol=${toSymbol}&apikey=SH5VJ8C149PG8B7B`
   )
     .then(
       response => response.json(),
@@ -31,7 +31,7 @@ export const getDailyForexTimeSeries = (fromSymbol, toSymbol) => dispatch => {
 
 export const getWeeklyForexTimeSeries = (fromSymbol, toSymbol) => dispatch => {
   fetch(
-    `https://www.alphavantage.co/query?function=FX_WEEKLY&from_symbol=${fromSymbol}&to_symbol=${toSymbol}&apikey=U9SLOWU4L29URCKD`
+    `https://www.alphavantage.co/query?function=FX_WEEKLY&from_symbol=${fromSymbol}&to_symbol=${toSymbol}&apikey=SH5VJ8C149PG8B7B`
   )
     .then(
       response => response.json(),
@@ -55,7 +55,7 @@ export const getWeeklyForexTimeSeries = (fromSymbol, toSymbol) => dispatch => {
 
 export const getMonthlyForexTimeSeries = (fromSymbol, toSymbol) => dispatch => {
   fetch(
-    `https://www.alphavantage.co/query?function=FX_MONTHLY&from_symbol=${fromSymbol}&to_symbol=${toSymbol}&apikey=U9SLOWU4L29URCKD`
+    `https://www.alphavantage.co/query?function=FX_MONTHLY&from_symbol=${fromSymbol}&to_symbol=${toSymbol}&apikey=SH5VJ8C149PG8B7B`
   )
     .then(
       response => response.json(),
@@ -82,9 +82,9 @@ export const getMonthlyForexSeriesForComparison = (
   ...toSymbol
 ) => dispatch => {
   Promise.all(
-    toSymbol.map(foreignCurrency => {
-      return fetch(
-        `https://www.alphavantage.co/query?function=FX_MONTHLY&from_symbol=${fromSymbol}&to_symbol=${foreignCurrency}&apikey=U9SLOWU4L29URCKD`
+    toSymbol.map(countryCurrency =>
+      fetch(
+        `https://www.alphavantage.co/query?function=FX_MONTHLY&from_symbol=${fromSymbol}&to_symbol=${countryCurrency}&apikey=SH5VJ8C149PG8B7B&datatype=json`
       )
         .then(
           response => response.json(),
@@ -97,8 +97,8 @@ export const getMonthlyForexSeriesForComparison = (
               type: MULTIPLE_FX_SERIES_MONTHLY,
               payload: reason
             })
-        );
-    })
+        )
+    )
   ).then(data => {
     dispatch({
       type: MULTIPLE_FX_SERIES_MONTHLY,
