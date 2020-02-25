@@ -28,6 +28,10 @@ const WeeklyForex = lazy(() =>
   import("./components/forex/container/WeeklyForex")
 );
 
+const MonthlyForex = lazy(() =>
+  import("./components/forex/container/MonthlyForex")
+);
+
 export default class MainLayout extends Component {
   constructor(props) {
     super(props);
@@ -75,6 +79,10 @@ export default class MainLayout extends Component {
               <Route
                 path="/forex/weekly"
                 render={props => <WeeklyForex {...props} />}
+              />
+              <Route
+                path="/forex/monthly"
+                render={props => <MonthlyForex {...props} />}
               />
             </Switch>
           </Suspense>

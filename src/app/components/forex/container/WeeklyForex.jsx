@@ -24,14 +24,14 @@ class WeeklyForex extends Component {
           type: "line"
         },
         title: {
-          text: "Weekly Forex of GBP-To-INR"
+          text: "Weekly Forex of GBP-To-UZS"
         },
         rangeSelector: {
           selected: 6
         },
         series: [
           {
-            name: "INR",
+            name: "UZS",
             data: exchangeSeriesData
           }
         ]
