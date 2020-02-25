@@ -62,6 +62,13 @@ const HighchartsMenu = () => {
               >
                 Monthly Stocks
               </NavLink>
+              <NavLink
+                className="nav-link"
+                style={{ color: "black" }}
+                to="/stocks/comparison"
+              >
+                Monthly Stocks Comparison
+              </NavLink>
             </div>
           </li>
         </ul>

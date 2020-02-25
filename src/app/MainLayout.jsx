@@ -16,6 +16,10 @@ const MonthlyStocks = lazy(() =>
   import("./components/stocks/container/MonthlyStocks")
 );
 
+const MonthlyStocksComparison = lazy(() =>
+  import("./components/stocks/container/MonthlyStocksComparison")
+);
+
 export default class MainLayout extends Component {
   constructor(props) {
     super(props);
@@ -51,6 +55,10 @@ export default class MainLayout extends Component {
               <Route
                 path="/stocks/monthly"
                 render={props => <MonthlyStocks {...props} />}
+              />
+              <Route
+                path="/stocks/comparison"
+                render={props => <MonthlyStocksComparison {...props} />}
               />
             </Switch>
           </Suspense>
