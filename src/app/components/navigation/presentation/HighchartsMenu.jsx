@@ -91,6 +91,13 @@ const HighchartsMenu = () => {
               >
                 Daily Forex
               </NavLink>
+              <NavLink
+                className="nav-link"
+                style={{ color: "black" }}
+                to="/forex/weekly"
+              >
+                Weekly Forex
+              </NavLink>
             </div>
           </li>
         </ul>

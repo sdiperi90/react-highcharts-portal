@@ -4,27 +4,27 @@ import Highcharts from "highcharts/highstock";
 import HighchartsReact from "highcharts-react-official";
 import PropTypes from "prop-types";
 
-import { getDailyForexTimeSeries } from "../../../actions/forex-action";
+import { getWeeklyForexTimeSeries } from "../../../actions/forex-action";
 import getSeriesData from "../../../util/global-functions";
 
-class DailyForex extends Component {
+class WeeklyForex extends Component {
   constructor(props) {
     super(props);
   }
   componentDidMount() {
-    this.props.getDailyForexTimeSeries("USD", "UZS");
+    this.props.getWeeklyForexTimeSeries("GBP", "UZS");
   }
   render() {
-    if (this.props.dailyExchangeRate) {
+    if (this.props.weeklyExchangeRate) {
       const exchangeSeriesData = getSeriesData(
-        this.props.dailyExchangeRate["Time Series FX (Daily)"]
+        this.props.weeklyExchangeRate["Time Series FX (Weekly)"]
       );
       const options = {
         chart: {
-          type: "spline"
+          type: "line"
         },
         title: {
-          text: "Daily Forex of USD-To-INR"
+          text: "Weekly Forex of GBP-To-INR"
         },
         rangeSelector: {
           selected: 6
@@ -51,14 +51,14 @@ class DailyForex extends Component {
   }
 }
 
-DailyForex.propTypes = {
-  dailyExchangeRate: PropTypes.object.isRequired
+WeeklyForex.propTypes = {
+  weeklyExchangeRate: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  dailyExchangeRate: state.forexReducer.dailyExchangeRate
+  weeklyExchangeRate: state.forexReducer.weeklyExchangeRate
 });
 
-export default connect(mapStateToProps, { getDailyForexTimeSeries })(
-  DailyForex
+export default connect(mapStateToProps, { getWeeklyForexTimeSeries })(
+  WeeklyForex
 );
