@@ -3,8 +3,7 @@ import { connect } from "react-redux";
 import Highcharts from "highcharts/highstock";
 import HighchartsReact from "highcharts-react-official";
 import PropTypes from "prop-types";
-
-import { getMonthlyForexTimeSeries } from "../../../actions/forex-actions";
+import { getMonthlyForexTimeSeries } from "../../../actions/forex-action";
 import getSeriesData from "../../../util/global-functions";
 
 class MonthlyForex extends Component {

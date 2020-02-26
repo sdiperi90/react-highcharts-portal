@@ -105,6 +105,13 @@ const HighchartsMenu = () => {
               >
                 Monthly Forex
               </NavLink>
+              <NavLink
+                className="nav-link"
+                style={{ color: "black" }}
+                to="/forex/compare"
+              >
+                Monthly Forex Comparison
+              </NavLink>
             </div>
           </li>
         </ul>
