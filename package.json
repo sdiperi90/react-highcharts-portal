@@ -38,7 +38,7 @@
     "bootswatch": "^4.3.1",
     "highcharts": "^8.0.0",
     "highcharts-react-official": "^3.0.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "popper.js": "^1.15.0",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
